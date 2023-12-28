@@ -1,0 +1,35 @@
+:root {
+  --background-color: #202020;
+  --first-bg-grid: #794f45;
+  --second-bg-grid: #77608d;
+  --font-color: #f0f0f0;
+}
+
+body {
+  font-family: "Open Sans", "sans-serif";
+  background-color: var(--background-color);
+  color: var(--font-color);
+}
+
+.title {
+  text-transform: uppercase;
+}
+
+.section {
+  padding: 40px 20px 40px;
+}
+
+.grid {
+  display: grid;
+  font-size: 30px;
+  padding: 20px;
+  background-color: var(--first-bg-grid);
+  margin: 0 0 20px;
+}
+
+.grid-inline {
+  display: inline-grid;
+  font-size: 30px;
+  padding: 20px;
+  background-color: var(--second-bg-grid);
+}
