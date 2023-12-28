@@ -3,10 +3,12 @@
   --first-bg-grid: #794f45;
   --second-bg-grid: #77608d;
   --font-color: #f0f0f0;
+  --border-color: rgba(240, 240, 240, 0.2);
 }
 
 body {
   font-family: "Open Sans", "sans-serif";
+  font-size: 20px;
   background-color: var(--background-color);
   color: var(--font-color);
 }
@@ -16,7 +18,7 @@ body {
 }
 
 .section {
-  padding: 40px 20px 40px;
+  padding: 20px;
 }
 
 .grid {
@@ -32,4 +34,18 @@ body {
   font-size: 30px;
   padding: 20px;
   background-color: var(--second-bg-grid);
+}
+
+.grid-body {
+  display: grid;
+  /* display: inline-grid; */
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat (2, 1fr);
+}
+
+.grid-item {
+  text-align: center;
+  border: dashed 1px var(--border-color);
+  padding: 30px;
+  font-weight: 600;
 }
