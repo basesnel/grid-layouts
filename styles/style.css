@@ -36,11 +36,40 @@ body {
   background-color: var(--second-bg-grid);
 }
 
-.grid-body {
+.grid-body-fr {
   display: grid;
-  /* display: inline-grid; */
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+}
+
+.grid-body-repeat-fr {
+  display: grid;
   grid-template-columns: repeat(3, 1fr);
-  grid-template-rows: repeat (2, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+}
+
+.grid-body-fix-fix-fr {
+  display: grid;
+  grid-template-columns: 200px 150px 1fr;
+  grid-template-rows: 1fr 1fr;
+}
+
+.grid-body-fr-2fr-fr {
+  display: grid;
+  grid-template-columns: 1fr 2fr 1fr;
+  grid-template-rows: 1fr 1fr;
+}
+
+.grid-body-percent {
+  display: grid;
+  grid-template-columns: 33.333% 33.333% 33.333%;
+  grid-template-rows: 1fr 1fr;
+}
+
+.grid-body-minmax {
+  display: grid;
+  grid-template-columns: 150px minmax(150px, 1fr) 150px;
+  grid-template-rows: 1fr 1fr;
 }
 
 .grid-item {

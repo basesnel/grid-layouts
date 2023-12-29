@@ -25,13 +25,101 @@
     </section>
     <section class="section">
       <h2 class="title">example 2: grid definition</h2>
-      <div class="grid-body">
+      <h3 class="title">1. grid with 1fr</h3>
+      <pre>
+        grid-body {
+          display: grid;
+          grid-template-columns: 1fr 1fr 1fr;
+          grid-template-rows: 1fr 1fr;
+        }
+      </pre>
+      <div class="grid-body-fr">
         <div class="grid-item">1</div>
         <div class="grid-item">2</div>
         <div class="grid-item">3</div>
-        <div class="grid-item">4</div>
-        <div class="grid-item">5</div>
-        <div class="grid-item">6</div>
+        <div class="grid-item">1fr</div>
+        <div class="grid-item">1fr</div>
+        <div class="grid-item">1fr</div>
+      </div>
+      <h3 class="title">2. grid with repeat-1fr</h3>
+      <pre>
+        grid-body {
+          display: grid;
+          grid-template-columns: repeat(3, 1fr);
+          grid-template-rows: repeat(2, 1fr);
+        }
+      </pre>
+      <div class="grid-body-repeat-fr">
+        <div class="grid-item">1</div>
+        <div class="grid-item">2</div>
+        <div class="grid-item">3</div>
+        <div class="grid-item">1fr</div>
+        <div class="grid-item">1fr</div>
+        <div class="grid-item">1fr</div>
+      </div>
+      <h3 class="title">3. grid with 200px 150px 1fr</h3>
+      <pre>
+        grid-body {
+          display: grid;
+          grid-template-columns: 200px 150px 1fr;
+          grid-template-rows: 1fr 1fr;
+        }
+      </pre>
+      <div class="grid-body-fix-fix-fr">
+        <div class="grid-item">1</div>
+        <div class="grid-item">2</div>
+        <div class="grid-item">3</div>
+        <div class="grid-item">200px</div>
+        <div class="grid-item">150px</div>
+        <div class="grid-item">1fr</div>
+      </div>
+      <h3 class="title">4. grid with 1fr 2fr 1fr</h3>
+      <pre>
+        grid-body {
+          display: grid;
+          grid-template-columns: 1fr 2fr 1fr;
+          grid-template-rows: 1fr 1fr;
+        }
+      </pre>
+      <div class="grid-body-fr-2fr-fr">
+        <div class="grid-item">1</div>
+        <div class="grid-item">2</div>
+        <div class="grid-item">3</div>
+        <div class="grid-item">1fr</div>
+        <div class="grid-item">2fr</div>
+        <div class="grid-item">1fr</div>
+      </div>
+      <h3 class="title">5. grid with percentage</h3>
+      <pre>
+        grid-body {
+          display: grid;
+          grid-template-columns: 33.333% 33.333% 33.333%;
+          grid-template-rows: 1fr 1fr;
+        }
+      </pre>
+      <div class="grid-body-percent">
+        <div class="grid-item">1</div>
+        <div class="grid-item">2</div>
+        <div class="grid-item">3</div>
+        <div class="grid-item">33.333%</div>
+        <div class="grid-item">33.333%</div>
+        <div class="grid-item">33.333%</div>
+      </div>
+      <h3 class="title">5. grid with percentage</h3>
+      <pre>
+        grid-body {
+          display: grid;
+          grid-template-columns: 150px minmax(150px, 1fr) 150px;
+          grid-template-rows: 1fr 1fr;
+        }
+      </pre>
+      <div class="grid-body-minmax">
+        <div class="grid-item">1</div>
+        <div class="grid-item">2</div>
+        <div class="grid-item">3</div>
+        <div class="grid-item">150px</div>
+        <div class="grid-item">minmax(150px, 1fr)</div>
+        <div class="grid-item">150px</div>
       </div>
     </section>
   </body>
