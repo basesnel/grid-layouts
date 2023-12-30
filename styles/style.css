@@ -96,6 +96,20 @@ body {
   grid-auto-columns: 100px;
 }
 
+.grid-body-auto-flow {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-auto-flow: row;
+}
+
+.grid-body-auto-flow-column {
+  grid-auto-flow: column;
+}
+
+.grid-body-auto-flow-dense {
+  grid-auto-flow: dense;
+}
+
 .grid-item {
   text-align: center;
   border: dashed 1px var(--border-color);
