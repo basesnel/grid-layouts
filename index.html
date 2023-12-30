@@ -25,7 +25,7 @@
     </section>
     <section class="section">
       <h2 class="title">example 2: grid definition</h2>
-      <h3 class="title">1. grid with 1fr</h3>
+      <h3 class="title">2.1 grid with 1fr</h3>
       <pre>
         grid-body {
           display: grid;
@@ -41,7 +41,7 @@
         <div class="grid-item">1fr</div>
         <div class="grid-item">1fr</div>
       </div>
-      <h3 class="title">2. grid with repeat-1fr</h3>
+      <h3 class="title">2.2 grid with repeat-1fr</h3>
       <pre>
         grid-body {
           display: grid;
@@ -57,7 +57,7 @@
         <div class="grid-item">1fr</div>
         <div class="grid-item">1fr</div>
       </div>
-      <h3 class="title">3. grid with 200px 150px 1fr</h3>
+      <h3 class="title">2.3 grid with 200px 150px 1fr</h3>
       <pre>
         grid-body {
           display: grid;
@@ -73,7 +73,7 @@
         <div class="grid-item">150px</div>
         <div class="grid-item">1fr</div>
       </div>
-      <h3 class="title">4. grid with 1fr 2fr 1fr</h3>
+      <h3 class="title">2.4 grid with 1fr 2fr 1fr</h3>
       <pre>
         grid-body {
           display: grid;
@@ -89,7 +89,7 @@
         <div class="grid-item">2fr</div>
         <div class="grid-item">1fr</div>
       </div>
-      <h3 class="title">5. grid with percentage</h3>
+      <h3 class="title">2.5 grid with percentage</h3>
       <pre>
         grid-body {
           display: grid;
@@ -105,7 +105,7 @@
         <div class="grid-item">33.333%</div>
         <div class="grid-item">33.333%</div>
       </div>
-      <h3 class="title">5. grid with percentage</h3>
+      <h3 class="title">2.6 grid with minmax()</h3>
       <pre>
         grid-body {
           display: grid;
@@ -120,6 +120,114 @@
         <div class="grid-item">150px</div>
         <div class="grid-item">minmax(150px, 1fr)</div>
         <div class="grid-item">150px</div>
+      </div>
+      <h3 class="title">2.7 grid with content-width</h3>
+      <pre>
+        grid-body {
+          display: grid;
+          grid-template-columns: auto 1fr 1fr;
+          grid-template-rows: repeat(2, 1fr);
+        }
+      </pre>
+      <div class="grid-body-auto-content">
+        <div class="grid-item">
+          Lorem ipsum dolor sit, amet consectetur adipisicing elit. Iste odit
+          minima modi est animi, laudantium itaque illo accusamus possimus quas
+          deleniti facere numquam omnis nostrum minus ducimus amet quibusdam
+          repudiandae.
+        </div>
+        <div class="grid-item">2</div>
+        <div class="grid-item">3</div>
+        <div class="grid-item">1fr</div>
+        <div class="grid-item">1fr</div>
+        <div class="grid-item">1fr</div>
+      </div>
+      <h3 class="title">2.8 grid with fit-content</h3>
+      <pre>
+        grid-body {
+          display: grid;
+          grid-template-columns: fit-content(300px) 1fr 1fr;
+          grid-template-rows: repeat(2, 1fr);
+        }
+      </pre>
+      <div class="grid-body-fit-content">
+        <div class="grid-item">
+          Lorem ipsum dolor sit, amet consectetur adipisicing elit. Iste odit
+          minima modi est animi, laudantium itaque illo accusamus possimus quas
+          deleniti facere numquam omnis nostrum minus ducimus amet quibusdam
+          repudiandae.
+        </div>
+        <div class="grid-item">2</div>
+        <div class="grid-item">3</div>
+        <div class="grid-item">1fr</div>
+        <div class="grid-item">1fr</div>
+        <div class="grid-item">1fr</div>
+      </div>
+      <h3 class="title">2.9 grid by grid-template</h3>
+      <pre>
+        grid-body {
+          display: grid;
+          grid-template: repeat(2, 1fr) / repeat(3, 1fr);
+        }
+      </pre>
+      <div class="grid-body-template">
+        <div class="grid-item">1</div>
+        <div class="grid-item">2</div>
+        <div class="grid-item">3</div>
+        <div class="grid-item">1fr</div>
+        <div class="grid-item">1fr</div>
+        <div class="grid-item">1fr</div>
+      </div>
+      <h3 class="title">2.10 implicit grid</h3>
+      <pre>
+        grid-body {
+          display: grid;
+          grid-template: repeat(2, 1fr) / repeat(3, 1fr);
+        }
+      </pre>
+      <div class="grid-body-implicit">
+        <div class="grid-item">1</div>
+        <div class="grid-item">2</div>
+        <div class="grid-item">3</div>
+        <div class="grid-item">4</div>
+        <div class="grid-item">5</div>
+        <div class="grid-item">6</div>
+        <div class="grid-item">7</div>
+      </div>
+    </section>
+    <section class="section">
+      <h2 class="title">example 3: regions</h2>
+      <h3 class="title">3.1 named regions</h3>
+      <pre>
+        grid-body {
+          display: grid;
+          grid-template-columns: 150px 1fr;
+          grid-template-rows: 100px 1fr;
+          grid-template-areas:
+            "header header"
+            "side content";
+          gap: 10px;
+        }
+      </pre>
+      <div class="grid-named-wrapper">
+        <div class="grid-header">header</div>
+        <div class="grid-side">side</div>
+        <div class="grid-content">condent</div>
+      </div>
+      <h3 class="title">3.2 grid-template</h3>
+      <pre>
+        grid-body {
+          display: grid;
+          grid-template:
+            [start] "header header" 100px [row2]
+            [row2] "side content" 1fr [row-end] / 150px 1fr;
+          gap: 10px;
+        }
+      </pre>
+      <div class="grid-named-template">
+        <div class="grid-header">header</div>
+        <div class="grid-side">side</div>
+        <div class="grid-content">condent</div>
       </div>
     </section>
   </body>
