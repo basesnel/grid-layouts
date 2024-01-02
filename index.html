@@ -281,5 +281,151 @@
         <div class="grid-content">condent</div>
       </div>
     </section>
+    <section class="section">
+      <h2 class="title">example 4: grid&apos;s elements</h2>
+      <h3 class="title">4.1 elements&apos;s property</h3>
+      <pre>
+        .grid-body {
+          display: grid;
+          grid-template: repeat(2, 1fr) / repeat(3, 1fr);
+        }
+
+        .grid-item {
+          text-align: center;
+          border: dashed 1px var(--border-color);
+          padding: 30px;
+          margin: 30px;
+        }
+      </pre>
+      <div class="grid-body-template">
+        <span class="grid-item-span">1</span>
+        <span class="grid-item-span">2</span>
+        <span class="grid-item-span">3</span>
+        <span class="grid-item-span">4</span>
+        <span class="grid-item-span">5</span>
+        <span class="grid-item-span">6</span>
+      </div>
+      <h3 class="title">4.2 movement grid-elements</h3>
+      <pre>
+        .grid-body {
+          display: grid;
+          grid-template: repeat(2, 1fr) / repeat(3, 1fr);
+        }
+
+        .grid-item-1 {
+          grid-row-start: 1;
+          grid-row-end: 3;
+          grid-column-start: 1;
+          grid-column-end: 3;
+        }
+      </pre>
+      <div class="grid-body-template">
+        <span class="grid-item grid-item-1">1</span>
+        <span class="grid-item">2</span>
+        <span class="grid-item">3</span>
+        <span class="grid-item">4</span>
+        <span class="grid-item">5</span>
+        <span class="grid-item">6</span>
+      </div>
+      <pre>
+        .grid-body {
+          display: grid;
+          grid-template: repeat(2, 1fr) / repeat(3, 1fr);
+        }
+
+        .grid-item-2 {
+          grid-row-start: 2;
+          grid-column-start: 3;
+        }
+      </pre>
+      <div class="grid-body-template">
+        <span class="grid-item">1</span>
+        <span class="grid-item grid-item-2">2</span>
+        <span class="grid-item">3</span>
+        <span class="grid-item">4</span>
+        <span class="grid-item">5</span>
+        <span class="grid-item">6</span>
+      </div>
+      <pre>
+        .grid-body {
+          display: grid;
+          grid-template: repeat(2, 1fr) / repeat(3, 1fr);
+        }
+
+        .grid-item-3 {
+          grid-row-start: span 2;
+          grid-column-start: span 3;
+        }
+      </pre>
+      <div class="grid-body-template">
+        <span class="grid-item">1</span>
+        <span class="grid-item">2</span>
+        <span class="grid-item grid-item-3">3</span>
+        <span class="grid-item">4</span>
+        <span class="grid-item">5</span>
+        <span class="grid-item">6</span>
+      </div>
+      <h3 class="title">4.3 row and col in css</h3>
+      <pre>
+        .grid-body {
+          display: grid;
+          grid-template-rows: [start] 1fr [row2] 1fr [row-end];
+          grid-template-columns: [start] 1fr [col2] 1fr [col3] 1fr [col-end];
+        }
+
+        .grid-item-4 {
+          grid-row-start: row2;
+          grid-column-start: col3;
+        }
+      </pre>
+      <div class="grid-body-colrownamed">
+        <span class="grid-item">1</span>
+        <span class="grid-item">2</span>
+        <span class="grid-item">3</span>
+        <span class="grid-item grid-item-4">4</span>
+        <span class="grid-item">5</span>
+        <span class="grid-item">6</span>
+      </div>
+      <pre>
+        .grid-body {
+          display: grid;
+          grid-template-rows: [start] 1fr [row2] 1fr [row-end];
+          grid-template-columns: [start] 1fr [col2] 1fr [col3] 1fr [col-end];
+        }
+
+        .grid-item-5 {
+          grid-row: 1/2;
+          grid-column: 1/3;
+        }
+      </pre>
+      <div class="grid-body-colrownamed">
+        <span class="grid-item">1</span>
+        <span class="grid-item">2</span>
+        <span class="grid-item">3</span>
+        <span class="grid-item">4</span>
+        <span class="grid-item grid-item-5">5</span>
+        <span class="grid-item">6</span>
+      </div>
+      <pre>
+        .grid-body {
+          display: grid;
+          grid-template-rows: [start] 1fr [row2] 1fr [row-end];
+          grid-template-columns: [start] 1fr [col2] 1fr [col3] 1fr [col-end];
+        }
+
+        .grid-item-6 {
+          grid-row: start / row-end;
+          grid-column: col2 / col3;
+        }
+      </pre>
+      <div class="grid-body-colrownamed">
+        <span class="grid-item">1</span>
+        <span class="grid-item">2</span>
+        <span class="grid-item">3</span>
+        <span class="grid-item">4</span>
+        <span class="grid-item">5</span>
+        <span class="grid-item grid-item-6">6</span>
+      </div>
+    </section>
   </body>
 </html>
