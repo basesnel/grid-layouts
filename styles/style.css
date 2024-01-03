@@ -206,3 +206,59 @@ body {
   grid-column: col2 / col3;
   background-color: var(--first-bg-grid);
 }
+
+.item-order-1 {
+  order: 2;
+  background-color: var(--first-bg-grid);
+}
+
+.item-order-2 {
+  order: 1;
+}
+
+.item-order-3 {
+  order: 3;
+}
+
+.item-order-4 {
+  order: 4;
+}
+
+.item-order-5 {
+  order: 5;
+}
+
+.item-order-6 {
+  order: 6;
+}
+
+.grid-body-align {
+  display: grid;
+  grid-template-rows: [start] 150px [row2] 150px [row-end];
+  grid-template-columns: [start] 1fr [col2] 1fr [col3] 1fr [col-end];
+  justify-items: start;
+  align-items: start;
+}
+
+.item-align-1 {
+  align-self: stretch;
+  justify-self: stretch;
+}
+
+.item-align-2 {
+  align-self: start;
+  justify-self: end;
+}
+
+.item-align-3 {
+  align-self: center;
+  justify-self: center;
+}
+
+.grid-body-with-gap {
+  display: grid;
+  grid-template-rows: [start] 150px [row2] 150px [row-end];
+  grid-template-columns: [start] 1fr [col2] 1fr [col3] 1fr [col-end];
+  row-gap: 20px;
+  column-gap: 40px;
+}

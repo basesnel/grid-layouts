@@ -426,6 +426,76 @@
         <span class="grid-item">5</span>
         <span class="grid-item grid-item-6">6</span>
       </div>
+      <h3 class="title">4.3 order of grid-elements</h3>
+      <pre>
+        .grid-body {
+          display: grid;
+          grid-template: repeat(2, 1fr) / repeat(3, 1fr);
+        }
+
+        .grid-item-* {
+          order: *;
+        }
+      </pre>
+      <div class="grid-body-template">
+        <span class="grid-item item-order-1">1</span>
+        <span class="grid-item item-order-2">2</span>
+        <span class="grid-item item-order-3">3</span>
+        <span class="grid-item item-order-4">4</span>
+        <span class="grid-item item-order-5">5</span>
+        <span class="grid-item item-order-6">6</span>
+      </div>
+      <h3 class="title">4.3 align of grid-elements</h3>
+      <pre>
+        .grid-body {
+          display: grid;
+          grid-template-rows: [start] 150px [row2] 150px [row-end];
+          grid-template-columns: [start] 1fr [col2] 1fr [col3] 1fr [col-end];
+          justify-items: start;
+          align-items: start;
+        }
+
+        .item-align-1 {
+          align-self: stretch;
+          justify-self: stretch;
+        }
+
+        .item-align-2 {
+          align-self: start;
+          justify-self: end;
+        }
+
+        .item-align-3 {
+          align-self: center;
+          justify-self: center;
+        }
+      </pre>
+      <div class="grid-body-align">
+        <span class="grid-item item-align-1">1</span>
+        <span class="grid-item item-align-2">2</span>
+        <span class="grid-item item-align-3">3</span>
+        <span class="grid-item">4</span>
+        <span class="grid-item">5</span>
+        <span class="grid-item">6</span>
+      </div>
+      <h3 class="title">4.4 gap of grid</h3>
+      <pre>
+        .grid-body {
+          display: grid;
+          grid-template-rows: [start] 150px [row2] 150px [row-end];
+          grid-template-columns: [start] 1fr [col2] 1fr [col3] 1fr [col-end];
+          row-gap: 20px;
+          column-gap: 40px;
+        }
+      </pre>
+      <div class="grid-body-with-gap">
+        <span class="grid-item">1</span>
+        <span class="grid-item">2</span>
+        <span class="grid-item">3</span>
+        <span class="grid-item">4</span>
+        <span class="grid-item">5</span>
+        <span class="grid-item">6</span>
+      </div>
     </section>
   </body>
 </html>
